@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "grokkingroots"
+version = "1.0.0"
+description = "MorphoGrok: a computable ceiling and grokking experiments for Arabic root extraction"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "pyarrow",
+]
+
+[project.optional-dependencies]
+train = ["torch>=2.2"]
+figures = ["matplotlib>=3.7"]
+baselines = ["nltk", "tashaphyne", "qalsadi", "pyarabic", "snowballstemmer", "camel-tools"]
+dev = ["pytest>=7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/grokkingroots"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

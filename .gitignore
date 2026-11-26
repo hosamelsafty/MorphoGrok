@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Data, splits, runs and results are built locally and never committed:
+# the lexicon is CC BY-ND 4.0 and may not be redistributed in modified form.
+/data/
+/artefacts/
+/figures/
+
+# Model checkpoints
+*.pt
+*.ckpt
